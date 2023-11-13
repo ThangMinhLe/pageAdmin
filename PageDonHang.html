@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí đơn hàng</title>
+    <link rel="stylesheet" href="..\css\admin\header.css">
+    <link rel="stylesheet" href="..\css\admin\container.css">
+    <link rel="stylesheet" href="..\css\admin\QuanLiDonHang.css">
+    <link rel="stylesheet" href="..\css\admin\footer.css">
+    <link rel="stylesheet" href="..\fonts\fontawesome-free-6.2.0-web\css\all.css">
+    <link rel="stylesheet" href="../css/toggleSwitch.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/chiTietDH.css">
+    <link rel="stylesheet" href="../css/admin/tiemKiemDH.css">
+</head>
+<body onload="renderTable2()" >
+<div class="wrap">
+    <div class="header">
+        <nav class="header_navbar"></nav>
+        <div class="logo">
+            <a href="..\TrangChu.html"><img src="./img/CHIU-TEA.png"></a>
+        </div>
+        <div class="khungSLG">
+            <a class="SLG"><b>
+                <center> Trang quản trị - Admin
+                    <br> &emsp;&emsp; Tiệm trà sữa Chiu - Tea
+                </center>
+            </b></a>
+        </div>
+        <div href="../admin.html" class="icon" style="margin-right: 1%">
+            <a href="../admin.html"><i class="fa-solid fa-user-gear"></i></a>
+        </div>
+        <div class="reload">
+            <i onclick="renderTable2()" title="Load lại" class="fa-solid fa-rotate-right"></i>
+        </div>
+        <div >
+            <input for="search" name="search" 
+            style="height: 40px; font-size: 20px;" id="tkiem" type="text" placeholder="Nhập nội dung cần tìm">
+        </div>
+            <img onclick="TimKiemDH()" class="timKiemDH" src="../img/TimKiem.png" title="Tìm kiếm">
+            <div href="#" class="icon" id="icon-user">
+                <div class="UserDir">
+                    <i class="fa-solid fa-user"></i>
+                    <span id="NameAdmin" style="color: #333333; font-size: 1.5rem; margin-left: 2px">Welcome Admin</span>
+                </div>
+    
+                <div class="icon__show" id="icon__show-logout" >
+                    <button  class="icon__show-login icon_user" id="InfTK-btn" style="color: #333333">Tài khoản</button>
+                    <button onclick="DangXuatAdmin()" class="icon__show-logup icon_user" id="LogOut-btn">Đăng xuất</button>
+                </div>
+            </div>
+            </div>
+    </div>
+    <div class="container">
+        <div class="grid">
+            <div class="grid__row">
+                <div class="grid__col-3" style="display:; ">
+                    <nav class="category">
+                        <h2 class="category__heading">
+                            <i class="fa-solid fa-list"></i>
+                            Danh mục</h2>
+                        <ul class="category__list">
+                            <li class="category-item"><a class="category-item-link" href="..\admin.html">Trang chủ admin</a></li>
+                            <li class="category-item"><a class="category-item-link" href="PageSanPham.html" >Quản lí sản phẩm</a></li>
+                            <li class="category-item"><a class="category-item-link" href="PageThongTin.html">Quản lí thông tin</a></li>
+                            <li class="category-item category-item-active"><a class="category-item-link" href="PageDonHang.html">Quản lí đơn hàng</a></li>
+                            <li class="category-item"><a class="category-item-link" href="PageLienHe.html">Chỉnh sửa thông tin liên hệ</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="grid__col-9">
+                    <div class="grid__col-9--header">
+                        <h2>Duyệt đơn hàng</h2>
+                       <!-- <div class="butom__TKDonhang">
+                           <button> <label style="font-size: 15px">Thông kê đơn hàng </label></button>
+                         </div> -->
+                    </div>
+
+
+                    <!-- Table bảng duyệt đơn hàng -->
+                    <div id="table">
+                        <table id="myTable" width="1250">
+                            <div id="table">
+                                <table id="myTable" width="1250">
+                        <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Mã đơn hàng</th>
+                                <th>Tên khách hàng</th>
+                                <th>Thời gian đặt đơn</th>
+                                <th>Xem chi tiết</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                                <th>Tác vụ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>DHICY6635</td>
+                                <td>Lê Minh Thắng</td>
+                                <td>16:35:37, 13/10/2023</td>
+                                <td>
+                                    <a style="color: blue;" href="#" onclick="xemChiTiet('DHICY6635')">Xem chi tiet</a> 
+                                </td>
+                                <td>1.688.000&nbsp;₫</td>
+                                    <td style="color: red"><b>Chưa duyệt</b></td>
+                                    <td>
+                                        <label class="switch">
+                                            <input onclick="checkDH(this, 1)" type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </td>
+                                </tr>
+                            <tr id="tongTienDaDuyet"> 
+                                <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
+                                <td style="color: blue"><b>0&nbsp;₫</b></td> 
+                                <td style="color: blue"><b>Đơn đã duyệt: 0</b></td> 
+                            </tr>
+                            <tr id="tongTienChuaDuyet"> 
+                                <td style="color: red" colspan="5"><b>TỔNG TIỀN CHƯA DUYỆT</b></td>
+                                <td style="color: red"><b>0&nbsp;₫</b></td> 
+                                <td style="color: red"><b>Đơn chưa duyệt: 0</b></td> 
+                        </tr>
+                        <tr> 
+                            <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
+                            <td style="color: green">0&nbsp;₫</td> 
+                            <td style="color: green">Tổng đơn hàng: 0</td>
+                            <td class="loadDuLieu" onclick="renderTable2()">LƯU DỮ LIỆU</td> 
+                        </tr></tbody></table> 
+                            </div>
+                        </table> 
+                    </div>
+                    <!-- End bảng duyệt đơn hàng -->
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>ICY store</h4>
+                    <ul>
+                        <li><a href="">Về chúng tôi</a></li>
+                        <li><a href="">Dịch vụ</a></li>
+                        <li><a href="">Chính sách bảo mật</a></li>
+                        <li><a href="">Chính sách đổi trả</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Trợ giúp</h4>
+                    <ul>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Giao hàng</a></li>
+                        <li><a href="">Trả hàng</a></li>
+                        <li><a href="">Đơn hàng</a></li>
+                        <li><a href="">Thanh toán</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Danh mục</h4>
+                    <ul>
+                        <li><a href="">Trà Sữa</a></li>
+                        <li><a href="">Hồng Trà</a></li>
+                        <li><a href="">Freeze</a></li>
+                        <li><a href="">Cafe Muối</a></li>
+                        <li><a href=""></a></li>
+                        <!-- <li><a href="index.html">Mỹ phẩm chức năng</a></li>
+                        <li><a href="index.html">Chống nắng</a></li>
+                        <li><a href="index.html">Làm sạch da</a></li>
+                        <li><a href="index.html">Trang điểm</a></li> -->
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Theo dõi chúng tôi</h4>
+                    <div class="social-link">
+                        <ul>
+                            <li><a href=""><i class="fab fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="newScreen">
+        <table id="chiTietDonHang">
+        </table>
+    </div>
+
+    
+    <!-- This is the detail -->
+
+    <div id="background-color-chiTiet" style = "display: none;">
+        <div style="border-radius: 10px;" id="background-chiTiet">
+        <div class="chiTietBox" id="chiTietBox">
+            <div class="Title">Xem chi tiết đơn hàng</div>
+            <table style="width: 100%;" id="chiTietDonHang">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Mã sản phẩm</th>
+                <th>Tên sản phẩm</th>
+                <th>Hình ảnh</th>
+                <th>Số lượng</th>
+                <th>Giá bán</th>
+                <th>Thành tiền</th>
+            </tr>
+        </thead>
+        <tbody><tr>
+                    <td>1</td>
+                    <td>TPL</td>
+                    <td>Kem chống nắng Peacholic</td>
+                    <td><img src="../img/KemChongNang_TPL.png" alt="Ảnh sản phẩm" width="40" height="40"></td>
+                    <td>2</td>
+                    <td>760.000&nbsp;₫</td>
+                    <td>1.520.000&nbsp;₫</td>
+                
+                </tr><tr>
+                    <td>2</td>
+                    <td>SP</td>
+                    <td>Sữa dưỡng da Simple</td>
+                    <td><img src="../img/SuaDuongDa_SP.png" alt="Ảnh sản phẩm" width="40" height="40"></td>
+                    <td>1</td>
+                    <td>168.000&nbsp;₫</td>
+                    <td>168.000&nbsp;₫</td>
+                
+                </tr>
+        <tr>
+            <td colspan="6">TỔNG TIỀN</td>
+            <td>1.688.000&nbsp;₫</td>
+        </tr>
+            </tbody></table>
+        </div>
+        </div></div>
+
+        <!-- End Detail -->
+
+</div>
+    <script src="../js/browseCart.js"></script>
+<script src="../js/admin.js" ></script>
+
+</body>
+</html>

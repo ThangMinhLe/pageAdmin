@@ -1,0 +1,113 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+a{
+    color: black;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.header {
+    width: 100%;
+    /*z-index: 1000;*/
+    background: #FFD3B5;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+}
+
+.logo{
+    margin-bottom: 20px;
+    height: auto;
+    width: auto;
+}
+
+.logo {
+    height: 90px;
+}
+.logo img {
+    width: 120%;
+    height: 120%;
+    border-radius: 25px;
+}
+.khungSLG {
+    width: 60%;
+}
+.icon>a{
+    color: black;
+}
+.SLG {
+    font-size: 2.5rem;
+    color: black;
+    font-style: italic;
+
+}
+.icon {
+    font-size: 2rem;
+}
+.fa-solid {
+    font-size: 2rem;
+}
+.icon img{
+    height: 100%;
+    width: 100%;
+}
+.icon:hover {
+    background: #fcbe94;
+    border-radius: 40px;
+}
+#icon-user{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+.icon_user{
+    background-color:  rgb(247,217,239);
+    border: rgb(247,217,239);
+}
+.icon{
+    height: 100%;
+    margin-top: 1rem;
+    position: relative;
+}
+.icon__show {
+    border-radius: 1rem;
+    width: 90px;
+    margin-left: -20px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 5px;
+    position: absolute;
+    top: 100%;
+    display: none;
+    background-color: #f7d9ef;
+}
+
+.icon:hover .icon__show {
+    display: block;
+}
+
+.icon__show-login:hover,
+.icon__show-logup:hover {
+    color: rgba(111, 111, 111, 0.9);
+    cursor: pointer;
+}
+
+.icon__show-login,
+.icon__show-logup {
+    text-decoration: none;
+}

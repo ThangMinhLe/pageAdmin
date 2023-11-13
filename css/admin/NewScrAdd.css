@@ -1,0 +1,109 @@
+#background-color-themsanpham {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+#background-themsanpham {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 90%;
+    background-color: rgb(255, 255, 255);
+}
+.ThemSanPhamBox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.ThemSanPhamBox>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0px;
+}
+.Title{
+    text-align: center;
+    font-size: 30px;
+}
+.Input{
+    border-radius: 2rem;
+    margin-right: 2px;
+    padding-left: 9px;
+    height: 6rem;
+    width: 60%;
+    border: 1px solid #b3b3b3;
+    font-size: 1.7rem;
+}
+.InputIMG{
+    font-size: 1.7rem;
+    width: 30%;
+    margin: 2rem 2rem 2rem 0;
+
+}
+.inputNumber{
+    width: 20%;
+}
+.ThemSPButton{
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    transition: color 1s, background-color 1s;
+
+}
+.ThemSPButton:hover{
+    cursor : pointer;
+    color: white;
+    background-color: green;
+}
+.SelectBox{
+    padding: 4px;
+    margin: 2rem 2rem 2rem 0;
+    font-size: 1.7rem;
+}
+span{
+    font-size: 1.5rem;
+}
+.form-group>label{
+    margin-left: 3px;
+    width: 15%;
+    font-size: 2rem;
+}
+.form-group{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 1.5rem;
+}
+.form-massage{
+    margin-left: 2px;
+ }
+.form-group.invalid .Input{
+    border-color: #f33a58;
+}
+.form-group.invalid .form-massage{
+    color: #f33a58;
+}
+/*.ButtonBox{*/
+/*    display: flex;*/
+/*    flex-direction: row;*/
+/*    flex-wrap: wrap;*/
+/*    margin-left: 185px;*/
+/*}*/
+/*.ButtonBox  button{*/
+/*    border-radius: 30px;*/
+/*    !* margin-top: 10px; *!*/
+/*    transition: color 1s, background-color 1s;*/
+/*    !* margin-bottom: 20px; *!*/
+/*}*/
