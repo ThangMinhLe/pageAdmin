@@ -22,8 +22,8 @@
         </div>
         <div class="khungSLG">
             <a class="SLG"><b>
-                <center> Trang quản trị - Admin
-                    <br> &emsp;&emsp; Tiệm trà sữa Chiu - Tea
+                <center>Yêu cái đẹp là thưởng thức
+                    <br> &emsp;&emsp; Tạo ra cái đẹp là nghệ thuật</br>
                 </center>
             </b></a>
         </div>
@@ -36,7 +36,7 @@
         <div >
             <input for="search" name="search" 
             style="height: 40px; font-size: 20px;" id="tkiem" type="text" placeholder="Nhập nội dung cần tìm">
-        </div>
+        </div> 
             <img onclick="TimKiemDH()" class="timKiemDH" src="../img/TimKiem.png" title="Tìm kiếm">
             <div href="#" class="icon" id="icon-user">
                 <div class="UserDir">
@@ -54,7 +54,7 @@
     <div class="container">
         <div class="grid">
             <div class="grid__row">
-                <div class="grid__col-3" style="display:; ">
+                <div class="grid__col-3">
                     <nav class="category">
                         <h2 class="category__heading">
                             <i class="fa-solid fa-list"></i>
@@ -75,65 +75,10 @@
                            <button> <label style="font-size: 15px">Thông kê đơn hàng </label></button>
                          </div> -->
                     </div>
-
-
-                    <!-- Table bảng duyệt đơn hàng -->
                     <div id="table">
                         <table id="myTable" width="1250">
-                            <div id="table">
-                                <table id="myTable" width="1250">
-                        <thead>
-                            <tr>
-                                <th>STT</th>
-                                <th>Mã đơn hàng</th>
-                                <th>Tên khách hàng</th>
-                                <th>Thời gian đặt đơn</th>
-                                <th>Xem chi tiết</th>
-                                <th>Tổng tiền</th>
-                                <th>Trạng thái</th>
-                                <th>Tác vụ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>DHICY6635</td>
-                                <td>Lê Minh Thắng</td>
-                                <td>16:35:37, 13/10/2023</td>
-                                 <td>
-                                    <a style="color: blue;" href="#" onclick="xemChiTiet('DHICY6635')">Xem chi tiet</a> 
-                                </td>
-                                <td>1.688.000&nbsp;₫</td>
-                                    <td style="color: red"><b>Chưa duyệt</b></td>
-                                    <td>
-                                        <label class="switch">
-                                            <input onclick="checkDH(this, 1)" type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </td>
-                                </tr>
-                            <tr id="tongTienDaDuyet"> 
-                                <td style="color: blue" colspan="5"><b>TỔNG TIỀN ĐÃ DUYỆT</b></td>
-                                <td style="color: blue"><b>0&nbsp;₫</b></td> 
-                                <td style="color: blue"><b>Đơn đã duyệt: 0</b></td> 
-                            </tr>
-                            <tr id="tongTienChuaDuyet"> 
-                                <td style="color: red" colspan="5"><b>TỔNG TIỀN CHƯA DUYỆT</b></td>
-                                <td style="color: red"><b>0&nbsp;₫</b></td> 
-                                <td style="color: red"><b>Đơn chưa duyệt: 0</b></td> 
-                        </tr>
-                        <tr> 
-                            <td style="color: green" colspan="5"><b>TỔNG TIỀN</b></td>
-                            <td style="color: green">0&nbsp;₫</td> 
-                            <td style="color: green">Tổng đơn hàng: 0</td>
-                            <td class="loadDuLieu" onclick="renderTable2()">LƯU DỮ LIỆU</td> 
-                        </tr></tbody></table> 
-                            </div>
                         </table> 
                     </div>
-                    <!-- End bảng duyệt đơn hàng -->
-
-
                 </div>
 
             </div>
@@ -167,15 +112,12 @@
                 <div class="footer-col">
                     <h4>Danh mục</h4>
                     <ul>
-                        <li><a href="">Trà Sữa</a></li>
-                        <li><a href="">Hồng Trà</a></li>
-                        <li><a href="">Freeze</a></li>
-                        <li><a href="">Cafe Muối</a></li>
-                        <li><a href=""></a></li>
-                        <!-- <li><a href="index.html">Mỹ phẩm chức năng</a></li>
+                        <li><a href="index.html">Bán chạy</a></li>
+                        <li><a href="index.html">Chăm sóc da</a></li>
+                        <li><a href="index.html">Mỹ phẩm chức năng</a></li>
                         <li><a href="index.html">Chống nắng</a></li>
                         <li><a href="index.html">Làm sạch da</a></li>
-                        <li><a href="index.html">Trang điểm</a></li> -->
+                        <li><a href="index.html">Trang điểm</a></li>
 
                     </ul>
                 </div>
@@ -199,53 +141,6 @@
         </table>
     </div>
 
-    
-    <!-- This is the detail -->
-
-    <!-- <div id="background-color-chiTiet" style = "display: ;">
-        <div style="border-radius: 10px;" id="background-chiTiet">
-        <div class="chiTietBox" id="chiTietBox">
-            <div class="Title">Xem chi tiết đơn hàng</div>
-            <table style="width: 100%;" id="chiTietDonHang">
-        <thead>
-            <tr>
-                <th>STT</th>
-                <th>Mã sản phẩm</th>
-                <th>Tên sản phẩm</th>
-                <th>Hình ảnh</th>
-                <th>Số lượng</th>
-                <th>Giá bán</th>
-                <th>Thành tiền</th>
-            </tr>
-        </thead>
-        <tbody><tr>
-                    <td>1</td>
-                    <td>TPL</td>
-                    <td>Kem chống nắng Peacholic</td>
-                    <td><img src="../img/KemChongNang_TPL.png" alt="Ảnh sản phẩm" width="40" height="40"></td>
-                    <td>2</td>
-                    <td>760.000&nbsp;₫</td>
-                    <td>1.520.000&nbsp;₫</td>
-                
-                </tr><tr>
-                    <td>2</td>
-                    <td>SP</td>
-                    <td>Sữa dưỡng da Simple</td>
-                    <td><img src="../img/SuaDuongDa_SP.png" alt="Ảnh sản phẩm" width="40" height="40"></td>
-                    <td>1</td>
-                    <td>168.000&nbsp;₫</td>
-                    <td>168.000&nbsp;₫</td>
-                
-                </tr>
-        <tr>
-            <td colspan="6">TỔNG TIỀN</td>
-            <td>1.688.000&nbsp;₫</td>
-        </tr>
-            </tbody></table>
-        </div>
-        </div></div> -->
-
-        <!-- End Detail -->
 
 </div>
     <script src="../js/browseCart.js"></script>
